@@ -1,0 +1,57 @@
+<div class="contenedor-imagen animate__animated animate__fadeIn">
+  <app-header></app-header>
+
+  <div class="grid">
+    <img class="imagen-carta" src="../../../assets/carta_img/{{lang}}_comp_quesa.png" alt="Carta dos">
+    <img class="imagen-carta" src="../../../assets/carta_img/{{lang}}_tacos.png" alt="Carta uno">
+    <img class="imagen-carta" src="../../../assets/carta_img/{{lang}}_burr_postres.png" alt="Carta tres">
+  </div>
+
+  <main class="carta">
+
+    <div>
+      <h1 class="titulo">TACOS</h1>
+      <div *ngFor="let comida of data.menu.carta.tacos">
+        <h2 class="nombre">{{comida.titulo}}</h2>
+        <p class="descripcion">{{comida.descripcion}}</p>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="titulo">BURRITOS</h1>
+      <div *ngFor="let comida of data.menu.carta.burritos">
+        <h2 class="nombre">{{comida.titulo}}</h2>
+        <p class="descripcion">{{comida.descripcion}}</p>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="titulo">QUESADILLAS</h1>
+      <div *ngFor="let comida of data.menu.carta.quesadillas">
+        <h2 *ngIf="!comida.titulo.includes('*')" class="nombre">{{comida.titulo}}</h2>
+        <h2 *ngIf="comida.titulo.includes('*')" class="nombre tortillaCorn">{{comida.titulo}}</h2>
+        <p class="descripcion">{{comida.descripcion}}</p>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="titulo">COMPARTIR</h1>
+      <div *ngFor="let comida of data.menu.carta.compartir">
+        <h2 class="nombre">{{comida.titulo}}</h2>
+        <p class="descripcion">{{comida.descripcion}}</p>
+      </div>
+
+      <h1 class="titulo">CHILAQUILES</h1>
+      <div *ngFor="let comida of data.menu.carta.chilaquiles">
+        <h2 class="nombre">{{comida.titulo}}</h2>
+        <p class="descripcion">{{comida.descripcion}}</p>
+      </div>
+
+      <h1 class="titulo">POSTRES</h1>
+      <div *ngFor="let comida of data.menu.carta.postres">
+        <h2 class="nombre postres">{{comida.titulo}}</h2>
+      </div>
+    </div>
+
+  </main>
+</div>
